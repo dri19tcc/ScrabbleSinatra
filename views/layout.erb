@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrabble</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="css" href="stylesheets/styles.css"/>
+</head>
+
+<body>
+  <header class="top">
+    <h1>Scrabble Scorer</h1>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="/"><h1>Home</h1></a></li>
+        <li><a href="/score">Score</a></li>
+        <li><a href="/score-many">Score Many</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="mailto:adriana@cannon.ws">Email Me</a></li>
+        <li>253.867.5309</li>
+        <li class="copyright">Copyright Adriana Cannon 2016</li>
+      </ul>
+    </nav>
+    <a href="#top">Top of Page</a>
+  </footer>
+</body>

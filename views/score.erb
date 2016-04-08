@@ -1,0 +1,16 @@
+<fieldset><legend><h2>Calculate a Single Word</h2></legend>
+<form action="" method="post" accept-charset="utf-8">
+  <fieldset>
+    <legend><h3>Word Score</h3></legend>
+    <label for="word">Enter Word</label>
+    <input type="text" name="word" value="" maxlength="7" id="word" pattern="[A-Za-z]{2,}"/>
+    <input type="submit" value="Score It"/>
+  </fieldset>
+</form>
+
+<section>
+  <% if @new_word %>
+  <%= "#{@new_word}: #{@score}" %>
+  <% end %>
+</section>
+</fieldset>
