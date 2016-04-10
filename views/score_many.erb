@@ -1,34 +1,46 @@
 <!-- <h1>Coming Soon!</h1>
 <img src="images/construction.gif" alt="Construction worker"/> -->
 
-<fieldset><legend><h2>Calculate Many Words</h2></legend>
-<form action="" method="post">
-  <fieldset>
-    <legend><h3>How Many Words?</h3></legend>
-    <input type="number" name="number" min="2" max="10" value="2"/>
-    <input type="submit" value="Submit"/>
-  </fieldset>
+<fieldset class="field-main"><legend><h2>Calculate Many Words</h2></legend>
+  <form action="" method="post">
+    <fieldset>
+      <legend><h3>How Many Words?</h3></legend>
+      <input class="boxes" type="number" name="number" min="2" max="10" value="2"/><br/>
+      <input class="buttons" type="submit" value="Submit"/>
+    </fieldset>
 
-  <!-- <section>
+    <!-- <section>
     <% if @number_words %>
     <%= "#{@number_words}" %>
     <% end %>
   </section> -->
 
   <fieldset><legend><h3>Word Score</h3></legend>
-    <label>Enter Words</label>
+    <!-- <label>Enter Words</label> -->
     <% 2.times do %>
-      <input type="text" name="game[]" value="" maxlength="7" pattern="[A-Za-z]{2,}"/>
+    <input class="boxes" type="text" name="game[]" value="" maxlength="7" pattern="[A-Za-z]{2,}"/>
     <% end %>
     <% (@number_words - 2).times do %>
-      <input type="text" name="game[]" value="" maxlength="7" pattern="[A-Za-z]{2,}"/>
+    <input class="boxes" type="text" name="game[]" value="" maxlength="7" pattern="[A-Za-z]{2,}"/>
     <% end %>
+    <br/>
+    <input class="buttons" type="submit" value="Score Them"/>
   </fieldset>
 
-<section> <!--use a hash and the block will give the key and the value out -->
-  <% if @new_words %>
-  <% @words_with_score.each do |word, score| %>
-  <%= "#{word}: #{score}" %><br/>
-  <% end %>
-  <% end %>
-</section>
+  <section> <!--use a hash and the block will give the key and the value out -->
+    <% if @new_words %>
+    <table>
+      <tr>
+        <td>Word</td>
+        <td>Score</td>
+      </tr>
+      <% @words_with_score.each do |word, score| %>
+      <tr>
+        <td><%= "#{word}" %></td>
+        <td><%= "#{score}" %></td>
+        <!-- <br/> -->
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+  </section>
