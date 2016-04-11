@@ -15,7 +15,7 @@ class Scoring
     hash = {:total_score => 0, :full_word => word, :letters => []}
     #:letters ex. => [{h => 4, e => 1, l => 1, l => 1, o => 1}]
     arr.each do |i|
-      value = SCORE_CHART[i] #|| 0
+      value = SCORE_CHART[i]
       tally = value + tally
       hash[:letters] << {i => value}
       # {"h" => 4}

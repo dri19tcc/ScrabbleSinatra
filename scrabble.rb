@@ -24,13 +24,12 @@ class Scrabble < Sinatra::Base
   end
 
   post '/score-many' do
-    @number_words = params["number"].to_i #|| 0
-    @new_words = params["game"] #|| []
+    @number_words = params["number"].to_i
+    @new_words = params["game"]
     @words_with_score = {}
     @new_words.each do |word|
       @words_with_score[word] = Scoring.score(word.gsub(/[^a-zA-Z]/,""))
     end
-    # return @words_with_score
     erb :score_many
   end
 
