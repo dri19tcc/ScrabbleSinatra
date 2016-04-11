@@ -8,18 +8,22 @@
     </fieldset>
 
     <section>
-      <% if @new_word %>
+      <% if @score_hash %>
       <table>
         <tr>
           <td>Word</td>
           <td>Score</td>
         </tr>
         <tr>
-          <td><%= "#{@new_word}" %></td>
-          <td><%= "#{@score}" %></td>
+          <td><%= "#{@score_hash[:full_word]}" %></td>
+          <td><%= "#{@score_hash[:total_score]}" %></td>
         </tr>
-        <% end %>
       </table>
+      <% @score_hash[:letters].each_with_index do |hash, index| %>
+      <%= "#{hash.first[0]}:#{hash.first[1] }" %>
+      <%= index == (@score_hash[:letters].length - 1) ? " " : ", " %>
+        <% end %>
+      <% end %>
     </section>
   </fieldset>
 </form>

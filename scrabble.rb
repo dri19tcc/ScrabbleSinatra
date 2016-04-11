@@ -13,8 +13,7 @@ class Scrabble < Sinatra::Base
   end
 
   post '/score' do
-    @new_word = params["word"]
-    @score = Scoring.score(@new_word)
+    @score_hash = Scoring.score(params["word"])
     erb :score
   end
 

@@ -37,7 +37,7 @@
       <% @words_with_score.each do |word, score| %>
       <tr>
         <td><%= "#{word}" %></td>
-        <td><%= "#{score}" %></td>
+        <td><%= "#{score[:total_score]}" %></td>
         <!-- <br/> -->
       </tr>
       <% end %>
