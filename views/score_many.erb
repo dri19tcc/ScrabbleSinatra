@@ -43,8 +43,7 @@
     </table>
     <% @words_with_score.each do |word, score| %>
     <% score[:letters].each_with_index do |hash, index| %>
-    <%= "#{hash.first[0]}:#{hash.first[1] }" %>
-    <%= index == (score[:letters].length - 1) ? " " : ", " %>
+    <%= "#{hash.first[0]}:#{hash.first[1]}" %><%= index == (score[:letters].length - 1) ? "" : ", " %>
     <% end %>
     <br/>
     <% end %>

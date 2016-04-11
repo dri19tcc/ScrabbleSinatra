@@ -20,8 +20,7 @@
         </tr>
       </table>
       <% @score_hash[:letters].each_with_index do |hash, index| %>
-      <%= "#{hash.first[0]}:#{hash.first[1] }" %>
-      <%= index == (@score_hash[:letters].length - 1) ? " " : ", " %>
+      <%= "#{hash.first[0]}:#{hash.first[1] }" %><%= index == (@score_hash[:letters].length - 1) ? " " : ", " %>
         <% end %>
       <% end %>
     </section>
