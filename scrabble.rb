@@ -12,6 +12,11 @@ class Scrabble < Sinatra::Base
     erb :score
   end
 
+  get '/score/:word' do
+    @score_hash = Scoring.score(params[:word])
+    erb :score
+  end
+
   post '/score' do
     @score_hash = Scoring.score(params["word"])
     erb :score
